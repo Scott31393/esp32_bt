@@ -6,13 +6,23 @@
 #include "esp_log.h"
 #include "nvs_flash.h"
 #include "esp_bt.h"
-
-
+#include <string.h>
 #include "esp_gap_ble_api.h"
 #include "esp_gatts_api.h"
 #include "esp_bt_defs.h"
 #include "esp_bt_main.h"
 
+//wifi module include
+#include "esp_wifi.h"
+#include "esp_event_loop.h"
+#include "nvs_flash.h"
+#include "lwip/err.h"
+#include "lwip/sys.h"
+
+//Set wifi access data
+#define EXAMPLE_ESP_WIFI_SSID      "ESP_32"
+#define EXAMPLE_ESP_WIFI_PASS      "000000"
+#define EXAMPLE_MAX_STA_CONN       CONFIG_MAX_STA_CONN
 
 
 void enableFlushAfterPrintf()
